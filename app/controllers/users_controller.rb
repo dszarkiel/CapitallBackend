@@ -15,7 +15,7 @@ class UsersController < ApplicationController
         if user.save
             render json: user, except: [:created_at, :updated_at]
         else
-            render json: {error: "Oops, something went wrong."}
+            render json: {error: user.errors.full_messages}
         end
     end
 
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     private 
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :date_of_birth, :email, :address, :avg_monthly_income, :password_digest)
+        params.require(:user).permit(:first_name, :last_name, :date_of_birth, :email, :address, :address_two, :city, :state, :zipcode, :avg_monthly_income, :password_digest)
     end
 
 end
