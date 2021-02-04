@@ -7,7 +7,7 @@ class BudgetsController < ApplicationController
 
     def show
         budget = Budget.find_by_id(params[:id])
-        render json: budget.to_json(include: [:tasks])
+        render json: budget.to_json(include: [:transactions])
     end
 
     def create

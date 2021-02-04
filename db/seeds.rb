@@ -14,6 +14,6 @@ budget1 = Budget.create(name: "Groceries", category: "Shopping", amount: 250, us
 # goal1 = Goal.create(name: "Vacation", description: "Go to Italy", amount: 3000, due_date: Date.new(2021, 06, 01), user_id: user1.id)
 
 
-transaction1 = Transaction.create(date: Date.new(2021, 01, 15), description: "Groceries - Marianos", category:"Groceries", amount: 59.12, budget_id: budget1.id, account_id: account1.id)
+transaction1 = Transaction.create(date: Date.new(2021, 01, 15), description: "Groceries - Marianos", category:"Shopping", amount: 59.12, budget_id: budget1.id, account_id: account1.id)
 transaction2 = Transaction.create(date: Date.new(2021, 01, 14), description: "Gas - Costco", category:"Auto", amount: 32.11, account_id: account1.id)
 transaction3 = Transaction.create(date: Date.new(2021, 01, 13), description: "Loan Pmt - Student Loan", category:"Loan Payment", amount: 32.45, account_id: account1.id, to_account_id: account2.id)
