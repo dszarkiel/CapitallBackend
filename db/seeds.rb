@@ -10,10 +10,19 @@ account1 = Account.create(name: "Chase", balance: 6320.34, category: "checking",
 account2 = Account.create(name: "Student Loan", balance: 2549.84, category: "loan", user_id: user1.id)
 
 budget1 = Budget.create(name: "Groceries", category: "Shopping", amount: 250, user_id: user1.id, month: 01)
+budget2 = Budget.create(name: "Car", category: "Auto", amount: 150, user_id: user1.id, month: 01)
+budget3 = Budget.create(name: "Bills", category: "Bills", amount: 250, user_id: user1.id, month: 01)
+budget4 = Budget.create(name: "Fun Stuff", category: "Entertainment", amount: 150, user_id: user1.id, month: 01)
 
 # goal1 = Goal.create(name: "Vacation", description: "Go to Italy", amount: 3000, due_date: Date.new(2021, 06, 01), user_id: user1.id)
 
 
 transaction1 = Transaction.create(date: Date.new(2021, 01, 15), description: "Groceries - Marianos", category:"Shopping", amount: 59.12, budget_id: budget1.id, account_id: account1.id)
 transaction2 = Transaction.create(date: Date.new(2021, 01, 14), description: "Gas - Costco", category:"Auto", amount: 32.11, account_id: account1.id)
-transaction3 = Transaction.create(date: Date.new(2021, 01, 13), description: "Loan Pmt - Student Loan", category:"Loan Payment", amount: 32.45, account_id: account1.id, to_account_id: account2.id)
+transaction3 = Transaction.create(date: Date.new(2021, 01, 9), description: "Loan Pmt - Student Loan", category:"Bills", amount: 32.45, account_id: account1.id, to_account_id: account2.id)
+transaction4 = Transaction.create(date: Date.new(2021, 01, 15), description: "Groceries - Marianos", category:"Shopping", amount: 59.12, budget_id: budget1.id, account_id: account1.id)
+transaction5 = Transaction.create(date: Date.new(2021, 01, 14), description: "Gas - Costco", category:"Auto", amount: 32.11, account_id: account1.id)
+transaction6 = Transaction.create(date: Date.new(2021, 01, 13), description: "Loan Pmt - Student Loan", category:"Bills", amount: 32.45, account_id: account1.id, to_account_id: account2.id)
+transaction7 = Transaction.create(date: Date.new(2021, 01, 12), description: "Groceries - Marianos", category:"Shopping", amount: 59.12, budget_id: budget1.id, account_id: account1.id)
+transaction8 = Transaction.create(date: Date.new(2021, 01, 16), description: "Gas - Costco", category:"Auto", amount: 32.11, account_id: account1.id)
+transaction9 = Transaction.create(date: Date.new(2021, 01, 11), description: "Loan Pmt - Student Loan", category:"Bills", amount: 32.45, account_id: account1.id, to_account_id: account2.id)
