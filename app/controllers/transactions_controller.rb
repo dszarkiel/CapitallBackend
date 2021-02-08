@@ -15,7 +15,7 @@ class TransactionsController < ApplicationController
         if transaction.save
             render json: transaction, except: [:created_at, :updated_at]
         else
-            render json: {error: "Oops, something went wrong."}
+            render json: {error: transaction.errors.full_messages}
         end
     end
 
@@ -24,7 +24,7 @@ class TransactionsController < ApplicationController
         if transaction.update(transaction_params)
             render json: transaction
         else
-            render json: {error: "Oops, something went wrong."}
+            render json: {error: transaction.errors.full_messages}
         end
     end
 

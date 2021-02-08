@@ -15,7 +15,7 @@ class AccountsController < ApplicationController
         if account.save
             render json: account, except: [:created_at, :updated_at]
         else
-            render json: {error: "Oops, something went wrong."}
+            render json: {error: account.errors.full_messages}
         end
     end
 
@@ -24,7 +24,7 @@ class AccountsController < ApplicationController
         if account.update(account_params)
             render json: account
         else
-            render json: {error: "Oops, something went wrong."}
+            render json: {error: account.errors.full_messages}
         end
     end
 
