@@ -15,7 +15,7 @@ class GoalsController < ApplicationController
         if goal.save
             render json: goal, except: [:created_at, :updated_at]
         else
-            render json: {error: "Oops, something went wrong."}
+            render json: {error: goal.errors.full_messages}
         end
     end
 
@@ -24,7 +24,7 @@ class GoalsController < ApplicationController
         if goal.update(goal_params)
             render json: goal
         else
-            render json: {error: "Oops, something went wrong."}
+            render json: {error: goal.errors.full_messages}
         end
     end
 
@@ -40,7 +40,7 @@ class GoalsController < ApplicationController
     private 
 
     def goal_params
-        params.require(:goal).permit(:name, :description, :amount, :due_date, :user_id)
+        params.require(:goal).permit(:name, :description, :amount, :due_date, :complete, :user_id)
     end
 
 end
