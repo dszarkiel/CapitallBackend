@@ -15,7 +15,7 @@ class BudgetsController < ApplicationController
         if budget.save
             render json: budget, except: [:created_at, :updated_at]
         else
-            render json: {error: "Oops, something went wrong."}
+            render json: {error: budget.errors.full_messages}
         end
     end
 
@@ -24,7 +24,7 @@ class BudgetsController < ApplicationController
         if budget.update(budget_params)
             render json: budget
         else
-            render json: {error: "Oops, something went wrong."}
+            render json: {error: budget.errors.full_messages}
         end
     end
 
