@@ -13,9 +13,10 @@ class UsersController < ApplicationController
     def create
         user = User.new(user_params)
         if user.save
+            NewUserEmailMailer.notify_user(user).deliver_now
             render json: user, except: [:created_at, :updated_at]
         else
-            render json: {error: user.errors.full_messages}
+            render json: {error: @user.errors.full_messages}
         end
     end
 
