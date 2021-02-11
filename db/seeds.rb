@@ -20,7 +20,9 @@ budget4 = Budget.create(name: "Fun Stuff", category: "Entertainment", amount: 15
 budget5 = Budget.create(name: "Fun Stuff", category: "Entertainment", amount: 150, user_id: user2.id, month: 01)
 
 goal1 = Goal.create(name: "Vacation", description: "Go to Italy", amount: 3000, due_date: Date.new(2021, 06, 01), complete: false, user_id: user1.id)
+goal2 = Goal.create(name: "Down Payment", description: "House Down Payment", amount: 20000, due_date: Date.new(2021, 06, 01), complete: false, user_id: user1.id)
 
+bill1 = Bill.create(name: "Phone Bill", amount: 95.45, due_date: Date.new(2021, 02, 13), autopay: false, user_id: user1.id)
 
 transaction1 = Transaction.create(date: Date.new(2021, 02, 5), description: "Groceries - Marianos", category:"Shopping", amount: 59.12, budget_id: budget1.id, account_id: account1.id)
 transaction2 = Transaction.create(date: Date.new(2021, 02, 4), description: "Gas - Costco", category:"Auto & Transport", amount: 32.11, account_id: account1.id)

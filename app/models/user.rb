@@ -4,6 +4,7 @@ class User < ApplicationRecord
     has_many :transactions, through: :accounts
     has_many :budgets
     has_many :goals
+    has_many :bills
 
     validates :first_name, presence: true
     validates :last_name, presence: true

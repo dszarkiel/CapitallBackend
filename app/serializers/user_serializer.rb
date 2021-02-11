@@ -4,5 +4,6 @@ class UserSerializer < ActiveModel::Serializer
   has_many :transactions, through: :accounts
   has_many :budgets
   has_many :goals
+  has_many :bills
 
 end
