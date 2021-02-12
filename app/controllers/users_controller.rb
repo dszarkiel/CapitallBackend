@@ -16,7 +16,7 @@ class UsersController < ApplicationController
             NewUserEmailMailer.notify_user(user).deliver_now
             render json: user, except: [:created_at, :updated_at]
         else
-            render json: {error: @user.errors.full_messages}
+            render json: {error: user.errors.full_messages}
         end
     end
 
