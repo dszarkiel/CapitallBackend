@@ -12,5 +12,4 @@ class User < ApplicationRecord
     validates :avg_monthly_income, numericality: {greater_than: 0}
     validates :email, uniqueness: true
     validates :zipcode, presence: true
-
 end

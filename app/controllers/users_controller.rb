@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     def create
         user = User.new(user_params)
         if user.save
-            NewUserEmailMailer.notify_user(user).deliver_now
+            NewUserEmailMailer.notify_user(user).deliver_later
             render json: user, except: [:created_at, :updated_at]
         else
             render json: {error: user.errors.full_messages}
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     private 
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :date_of_birth, :email, :address, :address_two, :city, :state, :zipcode, :avg_monthly_income, :password_digest)
+        params.permit(:first_name, :last_name, :date_of_birth, :email, :password, :address, :address_two, :city, :state, :zipcode, :avg_monthly_income)
     end
 
 end
